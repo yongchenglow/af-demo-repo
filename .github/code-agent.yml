@@ -1,0 +1,68 @@
+# AI Code Review Agent Configuration
+# This file configures how the agent reviews code in this repository
+
+agent:
+  enabled: true
+  mode: safe  # Creates fix PRs for human review (safer for demos)
+
+webhooks:
+  triggers:
+    - pull_request.opened
+    - pull_request.synchronize
+  wait_for_ci: false  # Don't wait for CI in demo
+  debounce_seconds: 5  # Quick response for demo
+
+review:
+  auto_review: true
+  auto_fix: true
+  severity_threshold: low  # Show all issues for demo
+  ignore_paths:
+    - "*.md"
+    - ".github/**"
+
+validation:
+  enabled: true
+  max_fix_attempts: 3
+  checks:
+    - syntax
+    - linting
+    - security
+  timeout_seconds: 30
+
+standards:
+  coding:
+    max_line_length: 100
+    max_function_length: 50
+    max_complexity: 10
+    naming_conventions:
+      functions: snake_case
+      classes: PascalCase
+      constants: UPPER_SNAKE_CASE
+
+  documentation:
+    require_docstrings: true
+    docstring_style: google
+    require_type_hints: true
+
+  security:
+    check_dependencies: true
+    check_secrets: true
+    owasp_checks: true
+
+languages:
+  python:
+    linters:
+      - flake8
+      - black
+    min_test_coverage: 80
+
+ai:
+  provider: deepseek
+  model: deepseek-chat
+  temperature: 0.2
+  max_tokens: 4000
+
+notifications:
+  on_review_complete: true
+  on_fixes_applied: true
+  mention_author: true
