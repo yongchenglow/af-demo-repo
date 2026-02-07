@@ -31,20 +31,26 @@ gh pr create --base main --head feature/performance-issues \
 ## What Each Branch Demonstrates
 
 ### 🔴 Branch 1: `feature/sql-injection-demo`
+
 **File:** `auth.py`
+
 - SQL Injection vulnerabilities (CRITICAL)
 - Hardcoded API keys and passwords
 - Sensitive data exposure
 
 ### 🟠 Branch 2: `feature/code-quality-issues`
+
 **File:** `analytics.py`
+
 - 60+ line function (too long)
 - 10+ cyclomatic complexity
 - Missing docstrings
 - Poor naming conventions
 
 ### 🟡 Branch 3: `feature/performance-issues`
+
 **File:** `payments.py`
+
 - Blocking operations (time.sleep)
 - N+1 query pattern
 - No pagination (100k records!)
@@ -53,6 +59,7 @@ gh pr create --base main --head feature/performance-issues \
 ## Watch the Magic (1-2 minutes)
 
 The AI agent automatically:
+
 1. ✅ Reviews code in **5-8 seconds**
 2. ✅ Posts detailed comments with 🔴🟠🟡 severity
 3. ✅ Generates validated fixes

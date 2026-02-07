@@ -9,12 +9,15 @@
 ## 🎯 What to Say During Demo
 
 ### Opening (30s)
+
 > "Every developer hates code reviews. They're slow, inconsistent, and miss critical bugs. We built an AI agent that reviews code like a senior developer - in seconds, not hours."
 
 ### Demo Setup (30s)
+
 > "I have a FastAPI repo with 3 pull requests. Each has intentional bugs that I want our agent to catch."
 
 ### Show Branch 1 - Security (1 min)
+
 > "This PR adds user authentication. Looks fine, right? Let's see what the agent finds..."
 >
 > **[Agent finds SQL injection]**
@@ -22,6 +25,7 @@
 > "Boom - SQL injection vulnerability caught instantly. The agent not only found it, but it's already generating a fix with parameterized queries. This would have been a critical security breach in production."
 
 ### Show Branch 2 - Code Quality (1 min)
+
 > "This PR adds analytics. The code works, but watch this..."
 >
 > **[Agent finds 7 issues]**
@@ -29,6 +33,7 @@
 > "The agent caught 7 code quality issues: function too long, high complexity, missing docstrings. It's refactoring the code right now, splitting it into smaller functions and adding proper documentation."
 
 ### Show Branch 3 - Performance (1 min)
+
 > "This payment endpoint looks functional. But..."
 >
 > **[Agent finds performance issues]**
@@ -36,6 +41,7 @@
 > "The agent detected a blocking operation that would freeze the entire server, an N+1 query problem that would slow down under load, and it's even catching that we're logging credit card numbers - a PCI compliance violation."
 
 ### The Wow Moment (30s)
+
 > "Notice how fast this is? From PR creation to fixes - under 10 seconds. Traditional code review? 15-20 minutes minimum. And the agent never gets tired, never misses obvious bugs, and costs less than a Netflix subscription."
 
 ---
@@ -43,21 +49,27 @@
 ## 💬 Answer Common Questions
 
 ### Q: "How much does it cost?"
+
 **A:** "DeepSeek costs $0.14 per million tokens - that's 10x cheaper than GPT-4. For a team doing 50 PRs/day, it's about $25/month vs $250+ for GPT-4. With our caching, we cut that by another 35%."
 
 ### Q: "What if it makes mistakes?"
+
 **A:** "That's why we have Safe Mode - it creates a separate PR for human review. Plus, every fix goes through a 3-attempt validation loop with actual linters. If it can't generate a valid fix after 3 tries, it skips that issue."
 
 ### Q: "Can it replace human reviewers?"
+
 **A:** "No - it augments them. It catches the boring stuff: security bugs, style issues, missing docs. Your senior devs can focus on architecture and business logic, not 'did you use parameterized queries?'"
 
 ### Q: "What languages does it support?"
+
 **A:** "Currently Python, JavaScript/TypeScript, and Go. Each has language-specific linters: flake8 for Python, eslint for JS, golangci-lint for Go. Adding new languages just means integrating their linters."
 
 ### Q: "How accurate is it?"
+
 **A:** "In our demo, it finds 17 issues across security, performance, and quality - with a 94% auto-fix rate. It catches all OWASP Top 10 vulnerabilities and validates every fix before applying."
 
 ### Q: "What about false positives?"
+
 **A:** "The validation loop prevents most false positives. If a fix doesn't pass linting or breaks syntax, it retries with that feedback. Plus, Safe Mode means humans approve everything."
 
 ---
@@ -110,15 +122,19 @@ gh pr create --base main --head feature/performance-issues \
 ## 🎤 Strong Closing Lines
 
 1. **The Problem Statement**
+
    > "Code review is the bottleneck in every development team. Senior devs spend hours catching bugs that tools should catch."
 
 2. **The Solution**
+
    > "We automated the boring part - security, style, performance - so humans can focus on what matters: architecture and business logic."
 
 3. **The Business Case**
+
    > "For the cost of one coffee per team member per month, you get 24/7 code review that never sleeps and never misses SQL injections."
 
 4. **The Technical Achievement**
+
    > "We built this on AgentField SDK, making it scalable, modular, and production-ready with 50+ passing tests."
 
 5. **The Call to Action**
@@ -129,6 +145,7 @@ gh pr create --base main --head feature/performance-issues \
 ## 🛡️ Backup Demos (If Something Breaks)
 
 ### Plan B: Show the Code
+
 ```bash
 # Show SQL injection vulnerability
 cat /Users/yongchenglow/sites/af-demo-repo/auth.py
@@ -138,6 +155,7 @@ cat /Users/yongchenglow/sites/af-demo-repo/auth.py
 ```
 
 ### Plan C: Show Expected Findings
+
 ```bash
 # Open EXPECTED_FINDINGS.md
 # Walk through what the agent would find
@@ -145,6 +163,7 @@ cat /Users/yongchenglow/sites/af-demo-repo/auth.py
 ```
 
 ### Plan D: Show Documentation
+
 ```bash
 # Open DEMO_GUIDE.md
 # "We documented every feature, every finding..."
@@ -156,14 +175,17 @@ cat /Users/yongchenglow/sites/af-demo-repo/auth.py
 ## 🎯 Judge What They Care About
 
 ### Technical Judges
+
 - Focus on: Validation loop, language-specific linters, scalability
 - Show: Architecture diagram, test coverage, performance metrics
 
 ### Business Judges
+
 - Focus on: Cost savings, time savings, ROI
 - Show: $25 vs $250/month, 60% faster reviews, security compliance
 
 ### Product Judges
+
 - Focus on: User experience, workflow integration
 - Show: GitHub integration, Safe Mode, comment updates
 
@@ -191,12 +213,15 @@ cat /Users/yongchenglow/sites/af-demo-repo/auth.py
 ## 🚀 Post-Demo Follow-up
 
 If they ask for the repo:
+
 > "Sure! It's at /Users/yongchenglow/sites/af-demo-repo - we have full documentation including setup guides, expected findings, and architecture diagrams."
 
 If they want to try it:
+
 > "You need a GitHub App with webhook access and an OpenRouter API key. Takes 10 minutes to set up - instructions are in GITHUB_APP_SETUP.md"
 
 If they want to invest/partner:
+
 > "We're production-ready with 50+ tests, comprehensive docs, and proven cost savings. We can deploy this to your repos in a day."
 
 ---
@@ -207,9 +232,10 @@ If they want to invest/partner:
 
 ---
 
-## 🎊 Good Luck!
+## 🎊 Good Luck
 
 Remember:
+
 - **Be confident** - You built something cool
 - **Be concise** - Judges have short attention spans
 - **Be prepared** - Have backup plans

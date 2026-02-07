@@ -7,20 +7,24 @@ This repository contains three demonstration branches showcasing the AI Code Rev
 ### 1. `feature/sql-injection-demo` - Security Vulnerabilities
 
 **What it demonstrates:**
+
 - 🔴 **Critical SQL Injection** vulnerabilities (OWASP Top 10)
 - 🔴 **Hardcoded secrets** (API keys, passwords)
 - 🔴 **Sensitive data exposure** in responses
 
 **Files to review:**
+
 - `auth.py` - Authentication with SQL injection flaws
 
 **Expected AI findings:**
+
 - SQL injection in login endpoint (lines 23-25)
 - SQL injection in get_user endpoint (line 33)
 - Hardcoded API key and password (lines 9-10)
 - Returning API key in response (line 27)
 
 **Auto-fix capability:**
+
 - ✅ Replace with parameterized queries
 - ✅ Move secrets to environment variables
 - ✅ Remove sensitive data from responses
@@ -30,6 +34,7 @@ This repository contains three demonstration branches showcasing the AI Code Rev
 ### 2. `feature/code-quality-issues` - Code Quality & Standards
 
 **What it demonstrates:**
+
 - 🟠 **Function too long** (60+ lines)
 - 🟠 **High cyclomatic complexity** (10+ nested conditions)
 - 🟡 **Missing docstrings** and documentation
@@ -37,9 +42,11 @@ This repository contains three demonstration branches showcasing the AI Code Rev
 - 🟡 **Too many parameters** (9 parameters!)
 
 **Files to review:**
+
 - `analytics.py` - Complex analytics function
 
 **Expected AI findings:**
+
 - Function exceeds 50 lines limit
 - Deep nesting (4+ levels of if statements)
 - No docstrings or type hints
@@ -47,6 +54,7 @@ This repository contains three demonstration branches showcasing the AI Code Rev
 - Unused variables (revenue_growth, posts_growth)
 
 **Auto-fix capability:**
+
 - ✅ Refactor into smaller functions
 - ✅ Add docstrings and type hints
 - ✅ Fix naming conventions
@@ -57,6 +65,7 @@ This repository contains three demonstration branches showcasing the AI Code Rev
 ### 3. `feature/performance-issues` - Performance & Error Handling
 
 **What it demonstrates:**
+
 - 🟠 **Blocking operations** (time.sleep in async context)
 - 🟠 **N+1 query pattern** (1000 sequential DB calls)
 - 🟠 **Memory issues** (loading 100k records without pagination)
@@ -65,9 +74,11 @@ This repository contains three demonstration branches showcasing the AI Code Rev
 - 🔴 **Logging sensitive data** (credit card info)
 
 **Files to review:**
+
 - `payments.py` - Payment processing with multiple issues
 
 **Expected AI findings:**
+
 - Synchronous sleep blocking event loop (line 19)
 - String concatenation in loop (lines 25-26)
 - Missing try-catch blocks
@@ -76,6 +87,7 @@ This repository contains three demonstration branches showcasing the AI Code Rev
 - Sensitive data in logs (line 32)
 
 **Auto-fix capability:**
+
 - ✅ Replace time.sleep with asyncio.sleep
 - ✅ Use list comprehension for string building
 - ✅ Add error handling blocks
@@ -116,16 +128,19 @@ The AI Code Review Agent will automatically:
 ### Step 3: Show the Results
 
 **Review Comments:**
+
 - Inline comments on problematic code
 - Severity emojis for quick scanning
 - Detailed explanations and remediation steps
 
 **Fix PRs:**
+
 - Automated fixes with validation
 - Links back to original review comments
 - Ready for human approval
 
 **Summary:**
+
 - Issue breakdown by category
 - Statistics (total issues, auto-fixed, etc.)
 - Cost metrics (AI API usage)
@@ -135,25 +150,30 @@ The AI Code Review Agent will automatically:
 ## 🎪 Hackathon Talking Points
 
 ### Speed
+
 - "Reviews complete in **5-8 seconds** - 60% faster than manual reviews"
 - "Parallel analysis of all files simultaneously"
 
 ### Cost Efficiency
+
 - "Uses DeepSeek at **$0.14/1M tokens** - 10x cheaper than GPT-4"
 - "Smart caching reduces costs by 35%"
 - "**~$25/month** for 50 PRs/day"
 
 ### Accuracy
+
 - "Catches OWASP Top 10 vulnerabilities automatically"
 - "3-attempt validation loop ensures working fixes"
 - "Language-specific linters (golangci-lint, flake8, eslint)"
 
 ### Intelligence
+
 - "Understands context and project patterns"
 - "Prioritizes critical issues first"
 - "Learns from validation failures"
 
 ### Safety
+
 - "Safe Mode: Creates separate PR for human review"
 - "YOLO Mode: Direct push for trusted repos"
 - "Always validates fixes before applying"
@@ -162,12 +182,12 @@ The AI Code Review Agent will automatically:
 
 ## 📊 Expected Metrics
 
-| Branch | Issues Found | Critical | High | Medium | Auto-Fixed |
-|--------|--------------|----------|------|--------|------------|
-| SQL Injection | 4 | 3 | 1 | 0 | 4 |
-| Code Quality | 7 | 0 | 2 | 5 | 7 |
-| Performance | 6 | 1 | 3 | 2 | 5 |
-| **Total** | **17** | **4** | **6** | **7** | **16** |
+| Branch        | Issues Found | Critical | High  | Medium | Auto-Fixed |
+| ------------- | ------------ | -------- | ----- | ------ | ---------- |
+| SQL Injection | 4            | 3        | 1     | 0      | 4          |
+| Code Quality  | 7            | 0        | 2     | 5      | 7          |
+| Performance   | 6            | 1        | 3     | 2      | 5          |
+| **Total**     | **17**       | **4**    | **6** | **7**  | **16**     |
 
 **Success Rate:** 94% auto-fix rate (16/17 issues)
 

@@ -10,7 +10,7 @@ PRE-DEMO SETUP (10 minutes before)
 
 □ Verify all branches exist
   git branch -a
-  Expected: main, feature/sql-injection-demo, 
+  Expected: main, feature/sql-injection-demo,
            feature/code-quality-issues, feature/performance-issues
 
 □ Have GitHub open in browser
@@ -113,19 +113,19 @@ Q: "How much does it cost?"
 A: "$25/month for 50 PRs/day using DeepSeek - 10x cheaper than GPT-4"
 
 Q: "What if it's wrong?"
-A: "Safe Mode creates separate PRs for review. Plus 3-attempt 
+A: "Safe Mode creates separate PRs for review. Plus 3-attempt
     validation with linters prevents bad fixes"
 
 Q: "Can it replace human reviewers?"
-A: "It augments them - handles security, style, performance so 
+A: "It augments them - handles security, style, performance so
     humans focus on architecture and business logic"
 
 Q: "What languages?"
-A: "Python, JavaScript/TypeScript, and Go with language-specific 
+A: "Python, JavaScript/TypeScript, and Go with language-specific
     linters. Easy to add more"
 
 Q: "False positives?"
-A: "Validation loop catches most. 94% auto-fix rate proves 
+A: "Validation loop catches most. 94% auto-fix rate proves
     accuracy. Plus human approval in Safe Mode"
 
 ═══════════════════════════════════════════════════════════════
@@ -156,4 +156,3 @@ FINAL REMINDERS
 ═══════════════════════════════════════════════════════════════
 
 Good luck! You've got this! 🚀🏆
-
